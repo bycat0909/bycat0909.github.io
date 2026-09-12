@@ -30,16 +30,15 @@ select:focus { border-color: #3385d6; box-shadow: 0 0 0 5px #d9efff; }
 .score-board strong { display: block; margin-top: 4px; font-size: 31px; color: #2864a5; }
 .problem-area { margin: 20px 34px 36px; padding: 28px 32px 36px; text-align: center; background: #fffdf5; border: 4px dashed #ffcf67; border-radius: 32px; }
 .guide { display: inline-block; margin: 0 0 24px; padding: 9px 20px; border-radius: 30px; font-size: 21px; font-weight: 900; color: #4b6382; background: #fff0b9; }
-.problem { display: flex; justify-content: center; align-items: center; gap: clamp(10px,2vw,25px); font-size: clamp(48px,8vw,82px); line-height: 1; font-weight: 950; color: #203a60; }
-.number { min-width: 1.75em; padding: 13px 8px; border-radius: 24px; background: white; box-shadow: 0 8px 0 #dbeeff; }
-.symbol { color: #f06f48; }
-.answer-box { position: relative; display: inline-flex; align-items: center; }
+.problem-text { width: fit-content; max-width: 100%; min-height: 108px; margin: 0 auto 32px; padding: 24px 30px; display: grid; place-items: center; border-radius: 24px; color: #203a60; background: white; box-shadow: 0 8px 0 #dbeeff; font-size: clamp(28px,5vw,52px); line-height: 1.35; font-weight: 950; overflow-wrap: anywhere; }
+.answer-box { position: relative; width: fit-content; margin: 0 auto; display: flex; align-items: center; }
 .answer-label { position: absolute; top: -15px; left: 50%; z-index: 1; transform: translateX(-50%); padding: 5px 15px; border-radius: 18px; color: white; background: #38a76c; font-size: 17px; font-weight: 900; white-space: nowrap; }
 .answer-box input { width: 240px; height: 120px; border: 7px solid #64c98e; border-radius: 28px; background: #f1fff6; font: inherit; font-size: 62px; font-weight: 950; color: #203a60; text-align: center; outline: none; caret-color: #3385d6; }
 .answer-box input::placeholder { color: #9ddbb7; }
 .answer-box input:focus { border-color: #3385d6; background: white; box-shadow: 0 0 0 9px #d9efff; }
 .answer-box input::-webkit-inner-spin-button, .answer-box input::-webkit-outer-spin-button { appearance: none; margin: 0; }
 .answer-box input[type="number"] { -moz-appearance: textfield; }
+.answer-help { min-height: 22px; margin: 15px 0 0; color: #607890; font-size: 14px; font-weight: 800; }
 .button-row { display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: wrap; }
 button { min-width: 220px; min-height: 64px; border: 0; border-radius: 20px; margin-top: 30px; padding: 15px 34px; font: inherit; font-size: 21px; font-weight: 950; color: white; background: #ff7b52; box-shadow: 0 8px 0 #d95635; cursor: pointer; transition: transform .15s,filter .15s; }
 button:hover { filter: brightness(1.06); transform: translateY(-2px); }
@@ -90,9 +89,8 @@ tbody tr:last-child td { border-bottom: 0; }
   .score-board strong { font-size: 24px; }
   .grade-badge { margin-inline: 10px; width: auto; font-size: 13px; }
   .guide { margin-bottom: 22px; font-size: 17px; }
-  .problem { flex-wrap: wrap; gap: 9px; font-size: clamp(42px,14vw,62px); }
-  .number { min-width: 1.6em; padding: 10px 5px; border-radius: 18px; }
-  .answer-box { flex-basis: 100%; justify-content: center; margin-top: 16px; }
+  .problem-text { min-height: 92px; margin-bottom: 30px; padding: 18px 12px; border-radius: 18px; font-size: clamp(24px,8vw,38px); }
+  .answer-box { justify-content: center; }
   .answer-box input { width: min(260px,84vw); height: 108px; font-size: 55px; }
   button { width: min(290px,90%); min-height: 62px; margin-top: 24px; }
   .message { font-size: 19px; }

@@ -7,7 +7,7 @@ title: 신나는 수학 놀이터
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="초등학교 1학년부터 6학년까지 사칙연산을 연습하고 학습 보고서를 확인하는 수학 게임">
+  <meta name="description" content="초등학교 1학년부터 6학년까지 학년별 수학을 연습하고 학습 보고서를 확인하는 수학 게임">
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/playground/math/math-game.css' | relative_url }}">
 </head>
@@ -40,10 +40,9 @@ title: 신나는 수학 놀이터
       <p id="grade-badge" class="grade-badge"></p>
       <section class="problem-area" aria-live="polite">
         <p class="guide"><span aria-hidden="true">✏️</span> 아래 문제를 풀어 보세요</p>
-        <div class="problem">
-          <span id="left" class="number">?</span><span id="operator" class="symbol">+</span><span id="right" class="number">?</span><span class="symbol">=</span>
-          <label class="answer-box"><span class="answer-label">내 답</span><input id="answer" type="number" min="0" inputmode="numeric" aria-label="정답" autocomplete="off" placeholder="?"></label>
-        </div>
+        <p id="question-text" class="problem-text">문제를 준비하고 있어요.</p>
+        <label class="answer-box"><span class="answer-label">내 답</span><input id="answer" type="text" inputmode="decimal" aria-label="정답" autocomplete="off" placeholder="?"></label>
+        <p id="answer-help" class="answer-help"></p>
         <div class="button-row"><button id="submit-button" type="button"><span aria-hidden="true">🙌</span> 정답 확인</button><button id="give-up-button" type="button" class="give-up">이 문제 포기</button></div>
         <p id="message" class="message">천천히 계산해 보세요.</p>
         <p id="time" class="time"></p>
