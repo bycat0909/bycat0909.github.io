@@ -1,0 +1,117 @@
+:root {
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    color: #25324b;
+    background: #fff8e8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px;
+    background-color: #eaf8ff;
+    background-image: radial-gradient(circle at 8% 12%, #fff4a8 0 5%, transparent 5.2%),
+                      radial-gradient(circle at 92% 84%, #c5f2d9 0 8%, transparent 8.2%),
+                      linear-gradient(180deg, #dff5ff 0%, #fff8e8 68%);
+    overflow-x: hidden;
+}
+
+.game-card {
+    position: relative;
+    z-index: 1;
+    width: min(960px, 100%);
+    background: rgba(255, 255, 255, .96);
+    border: 7px solid #ffc94d;
+    border-radius: 42px;
+    box-shadow: 0 20px 0 #f2b936, 0 30px 60px rgba(62, 103, 138, .2);
+    overflow: hidden;
+}
+
+.sky-decoration { position: fixed; opacity: .75; user-select: none; }
+.decoration-one { top: 8%; left: 4%; font-size: 70px; }
+.decoration-two { right: 5%; top: 12%; font-size: 52px; transform: rotate(12deg); }
+
+header { display: flex; align-items: center; justify-content: center; gap: 22px; padding: 30px 38px 22px; text-align: left; }
+.mascot { font-size: 76px; filter: drop-shadow(0 6px 0 #ffe0a6); }
+.eyebrow { margin: 0 0 5px; color: #e7653f; font-size: 19px; font-weight: 900; }
+h1 { margin: 0; font-size: clamp(32px, 5vw, 50px); color: #284d80; letter-spacing: -1px; }
+
+.score-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 0 34px; }
+.score-board div { text-align: center; padding: 15px 10px; border: 3px solid #cde7ff; border-radius: 22px; background: #eef8ff; }
+.score-board div:nth-child(2) { border-color: #d6efd9; background: #f0fbf1; }
+.score-board div:nth-child(3) { border-color: #ffe29a; background: #fff8dc; }
+.score-board span { display: block; font-size: 16px; font-weight: 900; }
+.score-board strong { display: block; margin-top: 4px; font-size: 34px; color: #2864a5; }
+
+.type-selector { margin: 22px 34px 0; padding: 18px 24px; border: 3px solid #decfff; border-radius: 26px; background: #f8f4ff; }
+.type-heading { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.type-icon { font-size: 34px; }
+.type-heading h2 { margin: 0; color: #51427e; font-size: 22px; }
+.type-heading p { margin: 3px 0 0; color: #766a96; font-size: 14px; font-weight: 700; }
+.digit-selectors { display: flex; align-items: end; justify-content: center; gap: 22px; margin-top: 15px; }
+.digit-selectors label { display: grid; gap: 6px; color: #4c416b; font-size: 15px; font-weight: 900; text-align: center; }
+.digit-selectors select { min-width: 170px; min-height: 54px; padding: 8px 42px 8px 18px; border: 3px solid #9c83db; border-radius: 16px; color: #3f3263; background: white; font: inherit; font-size: 19px; font-weight: 900; text-align: center; cursor: pointer; outline: none; }
+.digit-selectors select:focus { border-color: #3385d6; box-shadow: 0 0 0 5px #d9efff; }
+.selector-symbol { padding-bottom: 13px; font-size: 24px; }
+.type-note { margin: 12px 0 0; color: #766a96; font-size: 13px; font-weight: 800; text-align: center; }
+
+.problem-area { margin: 20px 34px 36px; padding: 28px 32px 36px; text-align: center; background: #fffdf5; border: 4px dashed #ffcf67; border-radius: 32px; }
+.guide { display: inline-block; margin: 0 0 24px; padding: 9px 20px; border-radius: 30px; font-size: 21px; font-weight: 900; color: #4b6382; background: #fff0b9; }
+.problem { display: flex; justify-content: center; align-items: center; gap: clamp(12px, 2.2vw, 28px); font-size: clamp(58px, 9vw, 90px); line-height: 1; font-weight: 950; color: #203a60; }
+.number { min-width: 1.9em; padding: 13px 8px; border-radius: 24px; background: white; box-shadow: 0 8px 0 #dbeeff; }
+.symbol { color: #f06f48; }
+.answer-box { position: relative; display: inline-flex; align-items: center; }
+.answer-label { position: absolute; top: -15px; left: 50%; z-index: 1; transform: translateX(-50%); padding: 5px 15px; border-radius: 18px; color: white; background: #38a76c; font-size: 17px; font-weight: 900; white-space: nowrap; }
+.answer-box input { width: 220px; height: 126px; border: 7px solid #64c98e; border-radius: 28px; background: #f1fff6; font: inherit; font-size: 78px; font-weight: 950; color: #203a60; text-align: center; outline: none; caret-color: #3385d6; }
+.answer-box input::placeholder { color: #9ddbb7; opacity: 1; }
+.answer-box input:focus { border-color: #3385d6; background: white; box-shadow: 0 0 0 9px #d9efff; }
+
+/* 숫자 입력기의 작은 증감 버튼은 어린이가 누르기 어려우므로 숨긴다. */
+.answer-box input::-webkit-inner-spin-button,
+.answer-box input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.answer-box input[type="number"] { -moz-appearance: textfield; }
+
+button { min-width: 240px; min-height: 68px; border: 0; border-radius: 22px; margin-top: 34px; padding: 17px 44px; font: inherit; font-size: 24px; font-weight: 950; color: white; background: #ff7b52; box-shadow: 0 9px 0 #d95635; cursor: pointer; transition: transform .15s, filter .15s; }
+button:hover { filter: brightness(1.06); transform: translateY(-2px); }
+button:active { transform: translateY(4px); box-shadow: 0 3px 0 #dc6340; }
+button:focus-visible { outline: 6px solid #a9ddff; outline-offset: 5px; }
+button:disabled { opacity: .55; cursor: default; transform: none; }
+button.secondary { margin-top: 12px; background: #438fd1; box-shadow: 0 7px 0 #2867a0; }
+.message { min-height: 34px; margin: 29px 0 0; font-size: 24px; font-weight: 950; color: #d95434; }
+.message.success { color: #26965b; }
+.time { min-height: 26px; margin: 8px 0 0; color: #52647f; font-size: 19px; font-weight: 800; }
+
+@media (max-width: 650px) {
+    body { display: block; padding: 10px; }
+    .game-card { border-width: 5px; border-radius: 28px; box-shadow: 0 10px 0 #f2b936; }
+    header { gap: 10px; padding: 20px 14px 16px; }
+    .mascot { font-size: 50px; }
+    .eyebrow { font-size: 13px; }
+    h1 { font-size: clamp(25px, 8vw, 36px); }
+    .score-board { gap: 6px; padding: 0 10px; }
+    .score-board div { padding: 10px 4px; border-width: 2px; border-radius: 15px; }
+    .score-board span { font-size: 12px; }
+    .score-board strong { font-size: 27px; }
+    .type-selector { margin: 16px 10px 0; padding: 15px 10px; border-radius: 20px; }
+    .type-heading { text-align: left; }
+    .type-icon { font-size: 28px; }
+    .type-heading h2 { font-size: 18px; }
+    .type-heading p { font-size: 12px; }
+    .digit-selectors { gap: 7px; }
+    .digit-selectors label { font-size: 12px; }
+    .digit-selectors select { min-width: 118px; min-height: 50px; padding: 7px 22px 7px 8px; font-size: 16px; }
+    .selector-symbol { padding-bottom: 13px; font-size: 17px; }
+    .type-note { font-size: 11px; }
+    .problem-area { margin: 16px 10px 24px; padding: 22px 9px 28px; border-radius: 24px; }
+    .guide { margin-bottom: 22px; font-size: 17px; }
+    .problem { flex-wrap: wrap; gap: 10px; font-size: clamp(50px, 16vw, 68px); }
+    .number { min-width: 1.75em; padding: 10px 5px; border-radius: 18px; }
+    .answer-box { flex-basis: 100%; justify-content: center; margin-top: 16px; }
+    .answer-box input { width: min(240px, 80vw); height: 116px; font-size: 72px; }
+    button { width: min(290px, 90%); min-height: 66px; margin-top: 28px; }
+    .message { font-size: 20px; }
+    .sky-decoration { display: none; }
+}
