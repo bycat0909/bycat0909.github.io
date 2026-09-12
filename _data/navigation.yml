@@ -1,0 +1,9 @@
+- name: Home
+  url: /
+- name: Categories
+  url: /categories/
+  categories: true
+- name: Playground
+  url: /playground/
+- name: About
+  url: /about/

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{% assign category_name = page.category %}{% assign subcategory_name = page.subcategory %}
+{% for category in site.data.categories %}{% if category.id == page.category %}{% assign category_name = category.name %}{% for child in category.children %}{% if child.id == page.subcategory %}{% assign subcategory_name = child.name %}{% endif %}{% endfor %}{% endif %}{% endfor %}
+<article class="post">
+  <header class="post-header">
+    <nav class="breadcrumb" aria-label="카테고리"><a href="{{ '/categories/#' | append: page.category | relative_url }}">{{ category_name }}</a><span>›</span><a href="{{ '/categories/#' | append: page.category | append: '-' | append: page.subcategory | relative_url }}">{{ subcategory_name }}</a></nav>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y년 %-m월 %-d일' }}</time> · {% assign words = content | strip_html | number_of_words %}{% assign minutes = words | divided_by: 200 | plus: 1 %}약 {{ minutes }}분</p>
+    {% if page.tags.size > 0 %}<ul class="tag-list" aria-label="태그">{% for tag in page.tags %}<li>#{{ tag }}</li>{% endfor %}</ul>{% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+  <footer class="post-footer"><a href="{{ '/categories/' | relative_url }}">다른 글 살펴보기 →</a></footer>
+</article>

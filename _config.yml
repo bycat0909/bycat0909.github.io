@@ -18,17 +18,28 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 신나는 수학 놀이터
+title: Dev Daddy Choi
 email: ""
 description: >- # this means to ignore newlines until "baseurl:"
-  자릿수를 골라 덧셈과 뺄셈을 재미있게 연습하는 어린이 수학 게임입니다.
+  개발, 공부, 프로젝트 그리고 일상을 기록하는 개발자 블로그입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://bycat0909.github.io"
+lang: ko
+timezone: Asia/Seoul
+permalink: /:year/:month/:day/:title/
+google_analytics: ""
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -38,14 +49,7 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - _templates
+  - README.md
+  - vendor

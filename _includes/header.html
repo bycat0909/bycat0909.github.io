@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu">메뉴</button>
+      <ul id="main-menu" class="nav-list">
+        {% for item in site.data.navigation %}
+        <li class="nav-item{% if item.categories %} has-submenu{% endif %}">
+          <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+          {% if item.categories %}
+          <ul class="submenu">
+            {% for category in site.data.categories %}
+            <li>
+              <a href="{{ '/categories/#' | append: category.id | relative_url }}">{{ category.name }}</a>
+              <ul>
+                {% for child in category.children %}<li><a href="{{ '/categories/#' | append: category.id | append: '-' | append: child.id | relative_url }}">{{ child.name }}</a></li>{% endfor %}
+              </ul>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

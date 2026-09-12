@@ -115,3 +115,22 @@ button.secondary { margin-top: 12px; background: #438fd1; box-shadow: 0 7px 0 #2
     .message { font-size: 20px; }
     .sky-decoration { display: none; }
 }
+
+.back-to-blog {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 3;
+    padding: 10px 16px;
+    border: 2px solid #c7e8fb;
+    border-radius: 999px;
+    color: #284d80;
+    background: rgba(255, 255, 255, .94);
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 5px 14px rgba(62, 103, 138, .15);
+}
+.back-to-blog:hover { border-color: #3385d6; }
+@media (max-width: 650px) {
+    .back-to-blog { position: static; display: inline-block; margin: 10px 0 0 10px; }
+}

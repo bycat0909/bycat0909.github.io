@@ -1,0 +1,19 @@
+---
+layout: page
+title: Categories
+description: 개발, 공부, 일상의 기록을 주제별로 모았습니다.
+permalink: /categories/
+---
+<div class="category-list">
+{% for category in site.data.categories %}
+<section id="{{ category.id }}" class="category-group">
+  <h2>{{ category.name }}</h2>
+  {% for child in category.children %}
+  <div id="{{ category.id }}-{{ child.id }}" class="subcategory-group">
+    <div class="subcategory-heading"><h3>{{ child.name }}</h3>{% assign count = 0 %}{% for post in site.posts %}{% if post.category == category.id and post.subcategory == child.id %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}<span>{{ count }}</span></div>
+    <ul class="post-list">{% for post in site.posts %}{% if post.category == category.id and post.subcategory == child.id %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><time>{{ post.date | date: '%Y.%m.%d' }}</time></li>{% endif %}{% endfor %}{% if count == 0 %}<li class="empty-state">아직 작성된 글이 없습니다.</li>{% endif %}</ul>
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}
+</div>

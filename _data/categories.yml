@@ -1,0 +1,25 @@
+- id: development
+  name: 개발
+  children:
+    - id: backend
+      name: Backend
+    - id: frontend
+      name: Frontend
+    - id: mobile
+      name: Mobile
+    - id: devops
+      name: DevOps
+- id: study
+  name: 공부
+  children:
+    - id: english
+      name: English
+    - id: documentation
+      name: Documentation
+- id: life
+  name: 일상
+  children:
+    - id: daily
+      name: Daily
+    - id: family
+      name: Family
